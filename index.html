@@ -7,7 +7,37 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-</head>
+<style id="dojo-editorial-43">
+/* COSTA'S DOJO / 43 identity: editorial retrofit */
+:root{--dojo-paper:#efece3;--dojo-ink:#161919;--dojo-red:#a8352d;--dojo-line:#bcb7ac}
+html{scroll-behavior:smooth}body{background:var(--dojo-paper)!important;color:var(--dojo-ink)!important;font-family:Arial,Helvetica,sans-serif!important}
+body::before{content:"";pointer-events:none;position:fixed;inset:0;z-index:1000;opacity:.105;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;letter-spacing:-.055em!important;text-transform:none!important;line-height:1.01!important}
+h1{font-size:clamp(4rem,10vw,10rem)!important}h2{font-size:clamp(2.9rem,6vw,6.6rem)!important}
+p{line-height:1.65!important}small,.eyebrow,.kicker{letter-spacing:.17em!important;text-transform:uppercase!important}
+section{position:relative}section+section{border-top:1px solid var(--dojo-line)}
+header,nav{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+button,.btn,[class*="button"],a[class*="btn"]{border-radius:2px!important}
+[class*="card"],[class*="tile"]{border-radius:2px!important;box-shadow:none!important}
+img{object-fit:cover}
+.dojo-identity{background:var(--dojo-ink);color:var(--dojo-paper);padding:clamp(55px,9vw,140px) clamp(24px,6vw,100px);display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,7vw,100px);align-items:center}
+.dojo-identity .folio{font:600 11px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#cabeb1;margin:0 0 32px}
+.dojo-identity h2{color:#f2eee5!important;margin:0 0 28px}
+.dojo-identity p{max-width:500px;color:#c9c6be}
+.dojo-identity .red-rule{height:4px;width:68px;background:var(--dojo-red);margin-top:46px}
+.dojo-identity .crest{display:flex;align-items:center;justify-content:center;min-height:340px;border:1px solid #555550;background:radial-gradient(circle at 50% 45%,#41413b,#151718 70%);position:relative;padding:30px}
+.dojo-identity .crest img{width:min(100%,365px);height:auto;filter:grayscale(1) contrast(1.1);mix-blend-mode:screen}
+.dojo-identity .crest:after{content:"NEW BEDFORD / MASSACHUSETTS";position:absolute;bottom:18px;left:20px;font:600 10px Arial,sans-serif;letter-spacing:.19em;color:#d4cdc2}
+.dojo-identity .kanji{position:absolute;right:20px;top:14px;color:#c9bcb1;font-size:25px;writing-mode:vertical-rl}
+.dojo-identity .issue{font:600 10px Arial,sans-serif;letter-spacing:.18em;color:var(--dojo-red);text-transform:uppercase;margin-top:16px}
+.dojo-topline{display:flex;justify-content:space-between;gap:16px;padding:10px 6vw;border-block:1px solid var(--dojo-line);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4d4f4a}
+.dojo-topline span:last-child{color:var(--dojo-red)}
+.dojo-gallery-note{padding:20px 6vw;font:12px/1.6 Arial,sans-serif;background:#e0dbcf;border-top:1px solid #a8a095}
+.dojo-gallery-note a{color:#8f2a22;text-decoration:underline}
+.dojo-research-note{display:none}
+@media(max-width:760px){.dojo-identity{grid-template-columns:1fr;padding:64px 22px}.dojo-identity .crest{min-height:280px}.dojo-topline{font-size:9px;padding-inline:20px}h1{font-size:clamp(3.8rem,14vw,6rem)!important}h2{font-size:clamp(2.65rem,12vw,5rem)!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header" id="top"><a href="#top" class="identity" aria-label="Costa's Karate home"><span class="identity-mark">C<span class="dot">.</span></span><span class="identity-text">COSTA'S<br><strong>KARATE</strong></span></a><nav class="desktop-nav" aria-label="Main navigation"><a href="#method">THE METHOD</a><a href="#classes">CLASSES</a><a href="#dojo">OUR DOJO</a><a href="#visit">VISIT</a></nav><a class="nav-cta" href="#enroll">START TRAINING <span>↗</span></a><button class="menu-toggle" id="menuToggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button></header>
@@ -21,6 +51,39 @@
 <section class="section dojo" id="dojo"><div class="dojo-head"><div><span class="section-kicker">[ 03 — LIFE AT THE DOJANG ]</span><h2>REAL PEOPLE.<br><span>REAL PROGRESS.</span></h2></div><p>See the students, instructors and moments that make the Costa's community what it is. Explore the school's own photography on Facebook.</p></div><div class="gallery-grid"><a class="gallery-panel one" href="https://www.facebook.com/CostasTangSooDo/photos" target="_blank" rel="noopener noreferrer"><span class="photo-index">01 / THE COMMUNITY</span><span class="gallery-graphic">道</span><span class="gallery-label">INSIDE THE DOJANG <b>↗</b></span></a><a class="gallery-panel two" href="https://www.facebook.com/CostasTangSooDo/photos" target="_blank" rel="noopener noreferrer"><span class="photo-index">02 / THE JOURNEY</span><span class="gallery-graphic">技</span><span class="gallery-label">TRAINING MOMENTS <b>↗</b></span></a><a class="gallery-panel three" href="https://www.facebook.com/CostasTangSooDo/photos" target="_blank" rel="noopener noreferrer"><span class="photo-index">03 / THE PEOPLE</span><span class="gallery-graphic">心</span><span class="gallery-label">THE COSTA'S FAMILY <b>↗</b></span></a></div><p class="gallery-note">Studio photos open in Costa's official Facebook gallery. Image placements are ready for locally saved photos once the gallery images are supplied.</p></section>
 <section class="section signup" id="enroll"><div class="signup-text"><span class="section-kicker">[ 04 — TAKE THE FIRST STEP ]</span><h2>EVERY BLACK BELT<br>STARTED <span>SOMEWHERE.</span></h2><p>Interested in joining? Tell us who you're signing up and what you're looking for. We'll prepare a text to Costa's Karate with everything they need to get back to you.</p><div class="trial-line"><span class="trial-icon">↗</span><div><b>ASK ABOUT A FREE TRIAL CLASS</b><small>Availability and details confirmed directly by the school.</small></div></div></div><form id="signupForm" class="signup-form"><div class="form-top"><span>STUDENT INQUIRY</span><span>01 — 04</span></div><label for="contactName">YOUR NAME <span>*</span></label><input id="contactName" name="contactName" placeholder="Your full name" required autocomplete="name" maxlength="100"><div class="form-row"><div><label for="studentName">STUDENT'S NAME</label><input id="studentName" name="studentName" placeholder="If different from yours" maxlength="100"></div><div><label for="ageRange">STUDENT AGE GROUP <span>*</span></label><select id="ageRange" name="ageRange" required><option value="" selected disabled>Select age group</option><option>Ages 5–7</option><option>Ages 8–12</option><option>Teen (13–17)</option><option>Adult (18+)</option></select></div></div><label for="experience">EXPERIENCE LEVEL <span>*</span></label><select id="experience" name="experience" required><option value="" selected disabled>Select experience</option><option>Brand new to martial arts</option><option>Some experience</option><option>Intermediate</option><option>Advanced</option><option>Not sure</option></select><label for="program">I'M INTERESTED IN <span>*</span></label><select id="program" name="program" required><option value="" selected disabled>Choose a class or question</option><option>Beginner classes</option><option>Intermediate or advanced classes</option><option>All ages and all ranks classes</option><option>Free trial class</option><option>General information / class times</option></select><label for="days">PREFERRED TRAINING DAYS</label><div class="day-options" id="days"><label><input type="checkbox" value="Monday"><span>MON</span></label><label><input type="checkbox" value="Tuesday"><span>TUE</span></label><label><input type="checkbox" value="Wednesday"><span>WED</span></label><label><input type="checkbox" value="Thursday"><span>THU</span></label><label><input type="checkbox" value="Saturday"><span>SAT</span></label></div><label for="notes">ANYTHING ELSE WE SHOULD KNOW?</label><textarea id="notes" name="notes" rows="3" placeholder="Questions, goals, or details you'd like to share" maxlength="600"></textarea><button class="submit-btn" type="submit">PREPARE MY TEXT <span>↗</span></button><p class="form-disclaimer">This opens your messaging app with a prefilled text to (508) 979-8111. Review and send the message to complete your inquiry. Submitting this form does not reserve a class.</p><div id="smsFallback" class="sms-fallback" hidden><p>Your text is ready. If your messaging app didn't open, use the buttons below.</p><a id="smsLink" href="#">OPEN TEXT MESSAGE ↗</a><button id="copyMessage" type="button">COPY MESSAGE</button><span id="copyStatus" role="status"></span></div></form></section>
 <section class="visit" id="visit"><div class="visit-inner"><div><span class="section-kicker">[ 05 — FIND YOUR PLACE ]</span><h2>THE DOOR IS<br><span>OPEN.</span></h2><p>Come find us in New Bedford. Have a question before you visit? Send us a text and we'll help you get started.</p><a class="visit-text" href="sms:+15089798111">TEXT (508) 979-8111 ↗</a></div><div class="address-card"><span>THE DOJANG / NEW BEDFORD</span><strong>376<br>NASH ROAD.</strong><p>NEW BEDFORD, MA 02746</p><a href="https://www.google.com/maps/search/?api=1&query=376+Nash+Road+New+Bedford+MA+02746" target="_blank" rel="noopener noreferrer">GET DIRECTIONS <span>↗</span></a><div class="address-bottom"><span>MON / TUE / WED / THU / SAT</span><span>TEXT FOR CLASS TIMES</span></div></div></div></section>
-</main><footer><div class="footer-main"><div><a class="footer-wordmark" href="#top">COSTA'S<br><span>KARATE.</span></a><p>TRADITIONAL TANG SOO DO.<br>NEW BEDFORD, MASSACHUSETTS.</p></div><div class="footer-links"><a href="#method">THE METHOD</a><a href="#classes">CLASSES</a><a href="#dojo">OUR DOJANG</a><a href="#enroll">SIGN UP</a></div><div class="footer-links"><a href="https://www.facebook.com/CostasTangSooDo/photos" target="_blank" rel="noopener noreferrer">FACEBOOK ↗</a><a href="sms:+15089798111">TEXT US ↗</a><a href="https://www.google.com/maps/search/?api=1&query=376+Nash+Road+New+Bedford+MA+02746" target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> COSTA'S TANG SOO DO KARATE</span><span>DESIGNED BY 43DOU</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+<div class="dojo-topline"><span>Traditional martial arts / modern discipline</span><span>Founded in New Bedford</span></div><section class="dojo-identity" id="our-tradition"><div><p class="folio">Costa’s Tang Soo Do &nbsp; / &nbsp; The school</p><h2>Tradition in motion.</h2><p>A school built on respect, focus and the practice of showing up. The discipline of Tang Soo Do belongs to every generation, from a first lesson to a lifetime of learning.</p><div class="red-rule"></div><p class="issue">A New Bedford martial arts tradition</p></div><div class="crest"><span class="kanji" aria-hidden="true">唐手道</span><img src="assets/costas-logo.png" alt="Costa’s Tang Soo Do school crest"></div></section><div class="dojo-gallery-note">School photography: the official <a href="https://www.facebook.com/CostasTangSooDo/photos" target="_blank" rel="noopener noreferrer">Costa’s Tang Soo Do Facebook gallery</a> is the source for authentic class images. No unrelated martial-arts stock photography has been substituted.</div></main><footer><div class="footer-main"><div><a class="footer-wordmark" href="#top">COSTA'S<br><span>KARATE.</span></a><p>TRADITIONAL TANG SOO DO.<br>NEW BEDFORD, MASSACHUSETTS.</p></div><div class="footer-links"><a href="#method">THE METHOD</a><a href="#classes">CLASSES</a><a href="#dojo">OUR DOJANG</a><a href="#enroll">SIGN UP</a></div><div class="footer-links"><a href="https://www.facebook.com/CostasTangSooDo/photos" target="_blank" rel="noopener noreferrer">FACEBOOK ↗</a><a href="sms:+15089798111">TEXT US ↗</a><a href="https://www.google.com/maps/search/?api=1&query=376+Nash+Road+New+Bedford+MA+02746" target="_blank" rel="noopener noreferrer">DIRECTIONS ↗</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> COSTA'S TANG SOO DO KARATE</span><span>DESIGNED BY 43DOU</span><a href="#top">BACK TO TOP ↑</a></div></footer>
 <script src="script.js"></script>
-</body></html>
+<script id="dojo-inquiry-43">
+(function(){
+ const PHONE="5089798111";
+ const mobile=()=> /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+ const isInquiry=f=>{const str=((f.id||"")+" "+(f.className||"")+" "+(f.getAttribute("aria-label")||"")).toLowerCase();return /quote|inquir|contact|trial|enroll|signup|register|lead/.test(str)||!!f.querySelector('input[type="tel"],input[name*="phone" i]')};
+ const formatForm=f=>{const data=new FormData(f),parts=[];for(const [key,value] of data.entries()){if(typeof value!=="string"||!value.trim()||/^submit$|^honeypot$|^_/.test(key))continue;const node=f.querySelector('[name="'+CSS.escape(key)+'"]');const title=node?.closest('label')?.textContent?.trim()||node?.getAttribute('aria-label')||key.replace(/[-_]/g,' ');parts.push(title.replace(/\s+/g,' ')+": "+value.trim())}return "Hello Costa's Tang Soo Do! I'd like to inquire about classes.\n\n"+parts.join("\n")};
+ function attach(f){
+   if(f.dataset.dojoInquiryBound)return;f.dataset.dojoInquiryBound="true";
+   const submit=f.querySelector('[type="submit"],button:last-of-type');
+   if(submit)submit.textContent=mobile()?"Prepare text message":"Send class inquiry";
+   const status=document.createElement('p');status.setAttribute('role','status');status.style.cssText="font-size:13px;margin:12px 0;color:inherit";f.append(status);
+   f.addEventListener("submit",async e=>{
+     e.preventDefault();
+     if(!f.reportValidity())return;
+     const message=formatForm(f);
+     if(mobile()){
+       const separator=/iPad|iPhone|iPod/.test(navigator.userAgent)?"&":"?";
+       window.location.href="sms:+1"+PHONE+separator+"body="+encodeURIComponent(message);
+       status.textContent="Your messages app will open with the inquiry ready to send.";
+       return;
+     }
+     if(submit)submit.disabled=true;status.textContent="Sending your inquiry…";
+     try{
+       const r=await fetch("/api/inquire",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message,website:"Costa's Tang Soo Do",source:"desktop"})});
+       const body=await r.json().catch(()=>({}));
+       if(!r.ok)throw new Error(body.error||"Email service is not configured yet.");
+       status.textContent="Inquiry sent. The studio will follow up with you.";f.reset();
+     }catch(err){status.textContent="Email inquiries aren't available yet: "+err.message+" You can call the studio at (508) 979-8111."}
+     finally{if(submit)submit.disabled=false}
+   },true);
+ }
+ document.addEventListener("DOMContentLoaded",()=>document.querySelectorAll("form").forEach(f=>{if(isInquiry(f))attach(f)}));
+})();
+</script></body></html>
