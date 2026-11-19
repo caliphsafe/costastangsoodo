@@ -8,18 +8,15 @@ A complete static HTML/CSS/JavaScript website for deployment to Vercel or GitHub
 3. On Vercel, import/refresh the GitHub repository. Framework preset: **Other**. Build command: **blank**. Output directory: **blank** (repository root).
 
 ## Inquiry setup
-On **mobile**, form submission opens a prefilled SMS addressed to `+1 508-979-8111`. On **desktop**, the form uses `mailto:` and a configurable email address. **The school has not yet provided that email address**, so the desktop fallback currently displays a copyable inquiry rather than sending to an invented recipient.
 
-When you receive the email address, open `config.js` and change:
+The contact form submits directly online from mobile and desktop using FormSubmit AJAX, matching the Carlos Vinyl Siding approach. Recipient: jcostakarate@gmail.com. No text message, mailto, or prepared-message step.
 
-```js
-window.COSTAS_CONTACT_EMAIL = 'school@example.com';
-```
+FormSubmit may require the owner to confirm a first-time activation email at jcostakarate@gmail.com before it will deliver inquiries. After activation, send a test inquiry and check inbox and spam folders. A successful form response means the provider accepted the submission; it is not proof of inbox delivery.
 
-The browser then opens the visitor's default email client with the email subject/body prepared. **The visitor must press Send; this is not automatic delivery.** If reliable form delivery without a configured email client is needed later, add an email provider/API endpoint (Resend, Formspree, etc.).
+Visitors provide a required contact email and optional phone number. Form fields are retained if a submission fails. The existing call link remains available independently.
 
 ## Photographs
-All 11 uploaded photographs have been embedded as optimized JPEGs in `assets/` and used throughout the hero, Master John Costa feature, programs, banners, and gallery. In particular, `master-john-costa-student.jpg` is used for the Master John Costa profile section. A photo lightbox supports desktop and mobile.
+All 11 uploaded photographs have been embedded as optimized JPEGs in `assets/` and used throughout the hero, Master John Costa feature, programs, banners, and gallery. The Master John Costa profile section now uses `instructor-leadership.jpg`. A photo lightbox supports desktop and mobile.
 
 ## Design
 Distinctive dojo/editorial direction, with bold condensed typography, angular graphic lines, traditional cream/red/black palette, immersive photography, asymmetrical editorial layout, one-word navigation, large touch targets, accessible mobile navigation, and reduced-motion support. No emoji glyphs used.
