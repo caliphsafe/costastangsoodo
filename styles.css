@@ -936,3 +936,17 @@ footer .footer-main p{color:#c5cac0}
   .programs .program-card{box-shadow:4px 5px 0 #d6cfc3}
   .contact-section .contact-form{box-shadow:6px 6px 0 #090e0c75}
 }
+
+
+/* Ensure the school's existing dark-ink emblem stays visible against the new dark navigation. */
+.header .brand-logo{
+  background:#f7f2e9;
+  border-radius:50%;
+  padding:4px;
+  border:1px solid #e2d9c8;
+  filter:none;
+}
+.header .brand{color:#f7f2e9}
+@media(max-width:800px){
+  .header .brand-logo{padding:3px}
+}
