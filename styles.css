@@ -1162,3 +1162,481 @@ select:focus-visible,textarea:focus-visible{
 @media(max-width:380px){
   .programs .program-copy h3{font-size:clamp(30px,8.4vw,37px);letter-spacing:-.6px}
 }
+
+
+/* ==============================================================
+   COSTA'S MOBILE EXPERIENCE — dedicated layout, not scaled desktop.
+   Changes are scoped to tablet/mobile; desktop remains unchanged.
+   ============================================================== */
+.mobile-nav-cta{display:none}
+@media (max-width:800px) {
+  html{scroll-padding-top:83px}
+  #home,#about,#programs,#master,#gallery,#contact,#visit{scroll-margin-top:83px}
+  body{-webkit-text-size-adjust:100%}
+  .section,.hero,.statement,.callout,.visit-section,footer{max-width:100%}
+  .section{padding:72px 6%}
+  .section-topline{
+    align-items:center;
+    min-height:31px;
+    gap:12px;
+    font:800 11px/1.4 var(--interactive);
+    letter-spacing:.9px;
+    padding-bottom:12px;
+    margin-bottom:0
+  }
+  .section h2{font-size:clamp(59px,10.5vw,87px);line-height:.84;letter-spacing:-1px}
+  .section-topline span:last-child{font-size:10px;letter-spacing:.4px;text-align:right}
+
+  /* The school's identity and class inquiry are always reachable. */
+  .header{
+    position:sticky;
+    top:0;
+    z-index:60;
+    height:74px;
+    min-height:74px;
+    padding:0 5%;
+    gap:10px;
+    box-shadow:0 4px 22px #07130f33
+  }
+  .header .brand{gap:10px;min-width:0;flex:1}
+  .header .brand-logo{width:47px;height:47px;flex:none}
+  .header .brand-type{min-width:0}
+  .header .brand-type b{font-size:27px;line-height:.88}
+  .header .brand-type small{font-size:8px;letter-spacing:.7px}
+  .header .header-cta{display:none}
+  .header .menu-button{
+    display:inline-flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:9px;
+    flex:none;
+    padding:10px 8px;
+    min-height:48px;
+    min-width:78px;
+    border:1px solid #f4efe54d;
+    border-radius:2px;
+    background:#ffffff0b;
+    color:#f6f2ea
+  }
+  .header .menu-button .menu-icon{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:25px;
+    height:22px;
+    background:transparent
+  }
+  .header .menu-button .menu-icon span{
+    width:24px;
+    height:2px;
+    margin:0;
+    flex:none;
+    background:#f6f2ea;
+    border-radius:1px;
+    transform-origin:center;
+    transition:transform .2s ease,opacity .2s ease
+  }
+  .header .menu-button .menu-label{
+    width:auto;
+    height:auto;
+    font:800 10px/1.2 var(--interactive);
+    letter-spacing:.5px;
+    background:transparent;
+    color:#f6f2ea
+  }
+  .header .menu-button[aria-expanded="true"] .menu-icon span:first-child{transform:translateY(7px) rotate(45deg)}
+  .header .menu-button[aria-expanded="true"] .menu-icon span:nth-child(2){opacity:0}
+  .header .menu-button[aria-expanded="true"] .menu-icon span:last-child{transform:translateY(-7px) rotate(-45deg)}
+  .header .nav.open{
+    display:flex;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:65;
+    max-height:calc(100dvh - 74px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:13px 5% calc(23px + env(safe-area-inset-bottom,0px));
+    gap:0;
+    border-top:1px solid #ffffff24;
+    border-bottom:4px solid #cb302a;
+    background:#14231c;
+    box-shadow:0 18px 28px #07120ed1
+  }
+  .header .nav.open>a:not(.mobile-nav-cta){
+    display:flex;
+    align-items:center;
+    min-height:51px;
+    padding:11px 14px;
+    font:700 17px/1.3 var(--interactive);
+    border-bottom:1px solid #ffffff24;
+    letter-spacing:0;
+    color:#f7f3ea
+  }
+  .header .nav.open>a:not(.mobile-nav-cta)::after{display:none}
+  .header .nav.open .mobile-nav-cta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    min-height:54px;
+    padding:15px 17px;
+    margin-top:17px;
+    border:0;
+    border-radius:2px;
+    background:#c62b28;
+    color:#fff;
+    font:800 13px/1.3 var(--interactive);
+    letter-spacing:.25px;
+    text-transform:none
+  }
+
+  /* Brand-first mobile opening: no photo, no cramped giant logo. */
+  .hero.hero-logo-feature{min-height:0;background:#f4efe5}
+  .hero-logo-feature .hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    min-height:0;
+    padding:39px 6% 82px
+  }
+  .hero-logo-feature .hero-brand-stage{
+    order:-1;
+    min-height:0;
+    width:100%;
+    padding:0;
+    margin:0 auto 20px;
+    background:transparent
+  }
+  .hero-logo-feature .hero-brand-mark{
+    width:clamp(162px,30vw,215px);
+    max-width:50%;
+    margin:auto;
+    filter:drop-shadow(0 10px 14px #261e1919)
+  }
+  .hero-logo-feature .hero-brand-halo,.hero-logo-feature .hero-brand-stage::before,
+  .hero-logo-feature .hero-brand-stage::after,
+  .hero-logo-feature .hero-brand-watermark,
+  .hero-logo-feature .hero-brand-caption{display:none}
+  .hero-logo-feature .hero-copy{width:100%;max-width:570px;margin-inline:auto}
+  .hero-logo-feature .hero-nameplate{display:none}
+  .hero-logo-feature .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font:800 10px/1.4 var(--interactive);
+    letter-spacing:.65px;
+    color:#3f4940
+  }
+  .hero-logo-feature .eyebrow-bar{width:26px;height:3px;flex:none}
+  .hero-logo-feature h1{
+    font-size:clamp(62px,9.4vw,87px);
+    line-height:.82;
+    margin:17px 0 17px;
+    letter-spacing:-.9px;
+    text-wrap:initial
+  }
+  .hero-logo-feature h1::after{width:50px;height:4px;margin-top:20px}
+  .hero-logo-feature .hero-copy>p{
+    max-width:530px;
+    margin:15px 0 0;
+    font-size:15px;
+    line-height:1.68;
+    color:#414941
+  }
+  .hero-logo-feature .hero-links{margin-top:22px;gap:19px}
+  .hero-logo-feature .hero-links .btn{min-height:52px}
+  .hero-logo-feature .hero-corner{
+    left:6%;
+    right:6%;
+    bottom:19px;
+    font:700 10px/1.4 var(--interactive);
+    letter-spacing:.5px
+  }
+
+  /* The values now read as a designed creed, not a squeezed marquee. */
+  .value-rail{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:auto;
+    justify-content:stretch;
+    align-items:stretch;
+    column-gap:9px;
+    row-gap:9px;
+    min-height:0;
+    padding:22px 6% 23px;
+    overflow:visible;
+    background:#b92524;
+    box-shadow:none
+  }
+  .value-rail::before{
+    content:"THE COSTA'S CODE";
+    display:block;
+    position:static;
+    inset:auto;
+    grid-column:1 / -1;
+    grid-row:1;
+    z-index:1;
+    width:auto;
+    height:auto;
+    margin:0 0 3px;
+    padding:0;
+    color:#ffe4df;
+    background:none;
+    opacity:1;
+    transform:none;
+    text-align:left;
+    font:800 11px/1.4 var(--interactive);
+    letter-spacing:1.6px;
+    text-shadow:none;
+    pointer-events:none
+  }
+  .value-rail i{display:none}
+  .value-rail span{
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:43px;
+    padding:10px 7px;
+    border:1px solid #ffffff5e;
+    background:#ffffff10;
+    border-radius:2px;
+    color:#fff;
+    font:800 clamp(11px,1.8vw,14px)/1.3 var(--interactive);
+    letter-spacing:.4px;
+    text-align:center;
+    white-space:normal;
+    text-shadow:none;
+    box-sizing:border-box
+  }
+  .value-rail span::after{content:none!important}
+  .value-rail span:last-child{
+    grid-column:1 / -1;
+    justify-self:stretch;
+    margin:0;
+    background:#ffffff22
+  }
+
+  /* Philosophy: compact, readable principle panels. */
+  .intro-layout{display:grid;grid-template-columns:1fr;gap:25px;padding-top:32px}
+  .intro-title .tiny-red{margin:0 0 15px}
+  .intro-title h2{font-size:clamp(63px,11.2vw,94px)}
+  .intro-title h2::after{margin-top:19px;width:51px;height:5px}
+  .intro-detail{padding:0}
+  .intro-detail::before{display:none}
+  .intro-big{padding:0;margin:0 0 17px;font-size:clamp(29px,5.6vw,40px)}
+  .intro-detail>p:not(.intro-big){font-size:15px;line-height:1.75}
+  .three-principles{grid-template-columns:1fr;gap:7px;padding:0;margin:27px 0}
+  .three-principles div,.intro .three-principles div,
+  .intro .three-principles div+div{
+    display:grid;
+    grid-template-columns:40px minmax(0,1fr);
+    grid-template-rows:auto auto;
+    align-items:center;
+    column-gap:12px;
+    row-gap:3px;
+    padding:13px 15px;
+    min-width:0;
+    border:1px solid #58705f
+  }
+  .three-principles b{grid-column:1;grid-row:1 / 3;align-self:center;justify-self:center;font-size:12px}
+  .three-principles strong{grid-column:2;grid-row:1;font-size:22px}
+  .three-principles small{grid-column:2;grid-row:2;font-size:12px;line-height:1.5}
+  .intro .inline-link{margin-top:2px;font-size:13px;gap:15px}
+
+  /* Cards become one-column, shorter, clearly interactive. */
+  .program-heading{display:block;margin:35px 0 28px}
+  .programs .program-heading h2{font-size:clamp(53px,10vw,83px);line-height:.87}
+  .program-heading>p{margin:20px 0 0;font-size:14px;line-height:1.75;max-width:560px}
+  .program-grid{grid-template-columns:1fr;gap:16px}
+  .program-card,.program-card:last-child{
+    display:block;
+    grid-column:auto;
+    box-shadow:4px 5px 0 #d6cfc3
+  }
+  .program-card:hover{transform:none}
+  .program-image,.program-card:last-child .program-image{height:clamp(225px,42vw,310px)}
+  .program-image img{object-fit:cover}
+  .program-copy{padding:22px}
+  .program-copy>p{font-size:11px;margin-bottom:8px}
+  .programs .program-copy h3{
+    font-size:clamp(34px,6.6vw,46px);
+    line-height:1.02;
+    margin-bottom:18px;
+    letter-spacing:-.4px;
+    white-space:nowrap
+  }
+  .program-copy>div{gap:14px}
+  .programs .program-copy>div span{max-width:none;font-size:13px;line-height:1.65}
+  .program-copy button{width:48px;height:48px;min-width:48px}
+  .program-note{font-size:12px;line-height:1.6;margin:30px 0 0}
+  .section-side-label{display:none}
+
+  /* Image/editorial interludes. */
+  .statement,.callout{grid-template-columns:1fr}
+  .statement-photo{min-height:0;max-height:none;height:clamp(235px,48vw,340px)}
+  .statement-photo img{object-position:center 35%}
+  .statement-content{min-height:0;padding:43px 6% 49px}
+  .statement-content>span{font-size:10px;letter-spacing:1px}
+  .statement-content p{font-size:clamp(55px,9vw,78px);line-height:.89;margin:27px 0 28px}
+  .statement-content a{font-size:13px}
+  .master-layout{grid-template-columns:1fr;gap:28px;padding-top:30px}
+  .master-image{padding:7px 7px 0 0}
+  .master-image img{height:clamp(340px,62vw,490px);object-position:center 30%}
+  .master-copy h2{font-size:clamp(76px,13vw,111px);line-height:.83;margin:17px 0 25px}
+  .master-copy>p:not(.tiny-red):not(.master-profile-label){font-size:15px;line-height:1.75}
+  .master-rule{font-size:12px;gap:10px;line-height:1.4}
+  .master-profile-label{font-size:11px!important}
+  .master-copy .btn{margin-top:12px}
+
+  /* One large gallery photo to enter the story, then tidy visual tiles. */
+  .gallery-edition{margin-bottom:22px;gap:8px;font-size:10px;line-height:1.4}
+  .gallery-heading{display:block;margin:30px 0 25px}
+  .gallery-heading h2{font-size:clamp(69px,11vw,90px)}
+  .gallery-heading p{margin:17px 0 0;max-width:540px;font-size:14px;line-height:1.72}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:none;
+    grid-auto-rows:clamp(172px,29vw,230px);
+    gap:9px
+  }
+  .gallery-wide,.gallery-portrait{grid-column:auto;grid-row:auto}
+  .gallery-item:first-child{grid-column:1 / -1;grid-row:auto;min-height:240px}
+  .gallery-item:nth-child(2){grid-column:1 / -1;grid-row:auto;min-height:225px}
+  .gallery-item img{height:100%;object-fit:cover}
+  .gallery-item span{
+    bottom:0;left:0;right:0;
+    font:800 12px/1.25 var(--interactive);
+    letter-spacing:0;
+    padding:24px 11px 12px;
+    gap:5px
+  }
+  .gallery-item:first-child span,.gallery-item:nth-child(2) span{font-size:15px;padding:35px 17px 15px}
+  .gallery-footer{display:flex;flex-direction:column;align-items:flex-start;gap:12px;font-size:10px;line-height:1.5}
+  .gallery-footer a{font-size:13px}
+  .callout-image{max-height:none;height:clamp(230px,45vw,340px)}
+  .callout-inner{padding:44px 6% 53px}
+  .callout h2{font-size:clamp(59px,9.6vw,82px);line-height:.87;margin:24px 0}
+  .callout p{font-size:15px;line-height:1.73}
+  .callout .btn{margin-top:16px}
+
+  /* Practical: the actual form becomes easy to complete one-handed. */
+  .contact-layout{grid-template-columns:1fr;gap:28px;padding-top:32px}
+  .contact-info h2{font-size:clamp(73px,11vw,105px);line-height:.86}
+  .contact-info>p:not(.tiny-red){font-size:15px;line-height:1.73}
+  .contact-sidenote{margin-top:30px;padding-top:18px;gap:5px}
+  .contact-sidenote b{font-size:19px}
+  .contact-form{width:100%;min-width:0;padding:22px;box-shadow:5px 6px 0 #0a0e0b78}
+  .contact-form::before{font-size:9px;letter-spacing:1px}
+  .form-header{align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:22px;padding-bottom:15px}
+  .contact-form .form-header strong{font-size:clamp(20px,3vw,25px)}
+  .contact-form .form-header span{font-size:10px}
+  .field-grid{grid-template-columns:1fr;gap:0}
+  .contact-form label{font-size:13px!important;letter-spacing:0!important;margin-bottom:18px}
+  .contact-form input:not([type=checkbox]),.contact-form select,.contact-form textarea{
+    width:100%;font-size:16px;min-height:52px;padding:13px 14px;margin-top:9px
+  }
+  .contact-form textarea{min-height:115px}
+  .days{gap:8px;margin-bottom:22px}
+  .days legend{font-size:13px!important}
+  .days label span{font-size:12px;padding:12px 13px;min-height:43px}
+  .form-submit{width:100%;min-height:56px}
+  .form-small{font-size:12px;line-height:1.6}
+
+  /* Visiting details and bottom navigation are finger-friendly. */
+  .visit-section{grid-template-columns:1fr}
+  .visit-copy{padding:55px 6% 56px}
+  .visit-copy>span{font-size:11px}
+  .visit-copy h2{font-size:clamp(73px,11vw,100px);line-height:.88;margin:27px 0 20px}
+  .visit-copy p{font-size:19px;line-height:1.5}
+  .visit-copy a{min-height:44px;align-items:center;font-size:13px}
+  .visit-map{min-height:300px}
+  .map-pin{gap:11px;transform:translateY(-15px)}
+  .map-pin>span{font-size:63px}
+  .map-pin b{font-size:clamp(29px,5.5vw,39px)}
+  .visit-map>p{left:20px;top:15px;font-size:10px}
+  .visit-map>a{bottom:20px;right:20px;min-height:44px;display:inline-flex;align-items:center;font-size:12px}
+  footer{padding:63px 6% 25px}
+  .footer-main{grid-template-columns:1fr 1fr;gap:27px 15px;padding-bottom:44px}
+  .footer-main>div:first-child{grid-column:1 / -1}
+  .footer-wordmark{font-size:clamp(73px,11vw,101px)}
+  footer .footer-main nav a,footer .footer-extra a{font-size:13px;min-height:25px}
+  .footer-bottom{gap:12px;font-size:10px}
+}
+@media (max-width:520px) {
+  .header{height:68px;min-height:68px}
+  .header .brand-logo{width:43px;height:43px}
+  .header .brand-type b{font-size:25px}
+  .header .brand-type small{font-size:7px;letter-spacing:.35px}
+  .header .menu-button{min-width:74px;padding:10px 7px}
+  .header .nav.open{max-height:calc(100dvh - 68px)}
+  .section{padding:63px 5%}
+  .section h2{font-size:clamp(57px,13.3vw,77px)}
+  .section-topline span:last-child{display:none}
+  .hero-logo-feature .hero-content{padding:32px 5% 74px}
+  .hero-logo-feature .hero-brand-stage{margin-bottom:15px}
+  .hero-logo-feature .hero-brand-mark{width:clamp(164px,50vw,207px);max-width:none}
+  .hero-logo-feature h1{font-size:clamp(53px,12.6vw,68px);letter-spacing:-.65px}
+  .hero-logo-feature .hero-copy>p{font-size:14px;max-width:365px}
+  .hero-logo-feature .hero-links{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:17px
+  }
+  .hero-logo-feature .hero-links .btn{width:100%;justify-content:space-between;font-size:13px}
+  .hero-logo-feature .hero-secondary{align-self:flex-start;font-size:12px;min-height:35px}
+  .hero-logo-feature .hero-corner{left:5%;right:5%;font-size:9px}
+  .value-rail{padding:19px 5% 22px;gap:8px}
+  .value-rail span{min-height:42px;font-size:12px;letter-spacing:.35px}
+  .value-rail span:last-child{grid-column:1/-1}
+  .intro-title h2{font-size:clamp(62px,13.2vw,78px)}
+  .intro-big{font-size:clamp(29px,7vw,38px)}
+  .programs .program-heading h2{font-size:clamp(50px,11.7vw,68px)}
+  .program-image,.program-card:last-child .program-image{height:clamp(210px,62vw,265px)}
+  .program-copy{padding:21px}
+  .programs .program-copy h3{font-size:clamp(30px,8.2vw,40px);white-space:nowrap}
+  .statement-photo{height:clamp(225px,62vw,300px)}
+  .statement-content{padding:39px 5% 45px}
+  .statement-content p{font-size:clamp(51px,13vw,68px)}
+  .master-image img{height:clamp(335px,94vw,430px)}
+  .master-copy h2{font-size:clamp(75px,16.4vw,104px)}
+  .gallery-edition span:last-child{display:none}
+  .gallery-heading h2{font-size:clamp(67px,14vw,86px)}
+  .gallery-grid{grid-auto-rows:clamp(166px,48vw,210px);gap:8px}
+  .gallery-item:first-child{min-height:225px}
+  .gallery-item:nth-child(2){min-height:205px}
+  .gallery-item:not(:first-child):not(:nth-child(2)) span{font-size:11px}
+  .callout-image{height:clamp(215px,59vw,270px)}
+  .callout-inner{padding:42px 5% 49px}
+  .callout h2{font-size:clamp(57px,12.7vw,72px)}
+  .contact-info h2{font-size:clamp(73px,16vw,100px)}
+  .contact-form{padding:18px;box-shadow:5px 6px 0 #0a0e0b78}
+  .days label span{padding:12px 10px}
+  .visit-copy{padding:52px 5% 55px}
+  .visit-copy h2{font-size:clamp(70px,15.5vw,92px)}
+  .visit-map{min-height:290px}
+  footer{padding:60px 5% 24px}
+  .footer-wordmark{font-size:clamp(68px,17vw,91px)}
+}
+@media (max-width:360px) {
+  .header .brand-type b{font-size:23px}
+  .header .brand-type small{font-size:7px}
+  .header .menu-button{min-width:68px;gap:6px}
+  .hero-logo-feature h1{font-size:clamp(51px,14.2vw,58px)}
+  .hero-logo-feature .eyebrow{font-size:9px;letter-spacing:.25px}
+  .hero-logo-feature .hero-brand-mark{width:166px}
+  .value-rail span{font-size:11px}
+  .programs .program-copy h3{font-size:30px}
+  .gallery-item:not(:first-child):not(:nth-child(2)) span{font-size:10px}
+  .footer-main{gap:25px 8px}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:800px) {
+  .menu-button .menu-icon span{transition:none!important}
+}
