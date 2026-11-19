@@ -68,3 +68,38 @@ inquiryForm.addEventListener('submit', async event => {
     submitButton.disabled = false;
   }
 });
+
+
+// Subtle motion cues for the dojang identity. Nonessential, reduced-motion safe.
+(() => {
+  const progress = document.querySelector('.dojo-progress span');
+  let queued = false;
+  const paintProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (progress) progress.style.width = (scrollable > 0 ? Math.min(100, Math.max(0, window.scrollY / scrollable * 100)) : 0) + '%';
+    queued = false;
+  };
+  const requestProgress = () => {
+    if (!queued) { queued = true; requestAnimationFrame(paintProgress); }
+  };
+  window.addEventListener('scroll', requestProgress, { passive: true });
+  window.addEventListener('resize', requestProgress, { passive: true });
+  paintProgress();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const items = document.querySelectorAll('.intro-title,.intro-detail,.program-card,.statement-content,.master-image,.master-copy,.gallery-heading,.gallery-item,.callout-inner,.contact-info');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .07, rootMargin: '0px 0px 0px 0px' });
+  items.forEach(item => {
+    // Sections already on screen remain immediately visible, so no flash on load.
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) return;
+    item.classList.add('reveal-ready');
+    observer.observe(item);
+  });
+})();
