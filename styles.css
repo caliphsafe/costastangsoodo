@@ -950,3 +950,192 @@ footer .footer-main p{color:#c5cac0}
 @media(max-width:800px){
   .header .brand-logo{padding:3px}
 }
+
+
+/* COSTA'S // FINAL CREATIVE DIRECTION
+   Type roles: Barlow Condensed for display headlines only; Manrope for navigation,
+   buttons, editorial labels and links; DM Sans for long form copy. */
+:root{--interactive:'Manrope','DM Sans',Arial,sans-serif;--focus-accent:#f05a4d}
+.header{gap:clamp(14px,2vw,28px);padding-inline:clamp(20px,4vw,74px)}
+.header .brand{gap:13px;min-width:0;flex:none}
+.header .brand-type b{font-family:var(--head);letter-spacing:0}
+.header .brand-type small{font:800 9px/1.3 var(--interactive);letter-spacing:1.1px}
+.header .nav{gap:clamp(8px,1.35vw,23px)}
+.header .nav a{
+  font:700 clamp(12px,1vw,14px)/1.4 var(--interactive);
+  letter-spacing:.12px;
+  text-transform:none;
+  padding:11px 9px;
+  border-radius:3px;
+  white-space:nowrap;
+  transition:color .18s ease,background-color .18s ease
+}
+.header .nav a::after{
+  height:2px;
+  bottom:4px;
+  left:9px;
+  right:calc(100% - 9px);
+  background:#e65a4e;
+  opacity:0;
+  transition:opacity .18s ease,transform .18s ease;
+  transform:scaleX(.3);
+  transform-origin:left
+}
+.header .nav a:hover::after,.header .nav a:focus-visible::after{right:calc(100% - 9px);opacity:1;transform:scaleX(1)}
+.header .nav a:hover,.header .nav a:focus-visible{color:#fff;background:#ffffff0b}
+.header .header-cta{
+  font:800 12px/1.4 var(--interactive);
+  letter-spacing:.6px;
+  padding:15px 17px;
+  white-space:nowrap;
+  justify-content:center;
+  gap:19px;
+  min-height:46px;
+  box-shadow:none
+}
+/* Interactive text gets one legible, consistent typographic language sitewide. */
+a.btn,button.btn,.hero-secondary,.inline-link,.statement-content>a,
+.gallery-footer>a,.visit-copy>a,.visit-map>a,
+.footer-main nav a,.footer-extra a,.footer-bottom a{
+  font-family:var(--interactive);
+  font-weight:800;
+  letter-spacing:.15px;
+  text-transform:none
+}
+a.btn,button.btn{font-size:clamp(12px,.94vw,15px);letter-spacing:.5px;line-height:1.4;min-height:54px;gap:24px}
+.hero-logo-feature .hero-secondary{
+  font:800 13px/1.4 var(--interactive);
+  letter-spacing:0;
+  border-bottom:2px solid currentColor;
+  padding-bottom:8px
+}
+.intro .inline-link{
+  font-size:14px;
+  border-bottom:2px solid currentColor;
+  padding-bottom:12px;
+  align-items:center;
+  gap:19px
+}
+.statement-content>a,.gallery-footer>a,.visit-copy>a{
+  font-size:clamp(13px,1.05vw,15px);
+  line-height:1.5;
+  letter-spacing:.25px
+}
+.statement-content>a{font-weight:800}
+.gallery-footer>a{border-bottom-width:2px}
+.visit-map>a{
+  font-size:13px;
+  letter-spacing:.25px;
+  padding:15px 18px
+}
+footer .footer-main nav,footer .footer-extra{gap:16px}
+footer .footer-main nav a,footer .footer-extra a{
+  font:700 14px/1.5 var(--interactive);
+  letter-spacing:0;
+  width:fit-content;
+  transition:color .18s ease,transform .18s ease
+}
+footer .footer-main nav a:hover,footer .footer-extra a:hover{transform:translateX(5px);color:#ff8176}
+footer .footer-bottom,footer .footer-bottom a{font-family:var(--interactive);font-size:10px;letter-spacing:.45px}
+footer .footer-bottom a{color:#eee9df;font-weight:800}
+footer .footer-bottom a:hover{color:#fa7369}
+/* Supporting editorial hierarchy */
+.section-topline{
+  font:800 11px/1.45 var(--interactive);
+  letter-spacing:1.1px;
+  text-transform:uppercase
+}
+.tiny-red,.gallery-edition,.program-copy>p,
+.program-image>span,.program-note,.master-rule,
+.master-profile-label,.statement-content>span,
+.callout-inner>span,.visit-copy>span,
+.hero-brand-caption span,.hero-brand-caption strong{
+  letter-spacing:.6px
+}
+.program-copy>p,.program-image>span,.master-profile-label,
+.statement-content>span,.callout-inner>span,
+.gallery-edition,.gallery-footer,.visit-copy>span{
+  font-family:var(--interactive);
+  line-height:1.4
+}
+.program-copy>p,.program-image>span{font-weight:800}
+.program-copy button{
+  display:grid;
+  place-items:center;
+  font:800 22px/1 var(--interactive);
+  border-radius:2px;
+}
+.gallery-footer{font-family:var(--interactive);font-size:11px;letter-spacing:.45px}
+.gallery-heading p,.program-heading>p,.intro-detail>p:not(.intro-big),.master-copy>p:not(.tiny-red),
+.contact-info>p:not(.tiny-red){font-size:clamp(15px,1.12vw,17px);line-height:1.82}
+.programs .program-copy>div span{font-size:14px;line-height:1.67}
+.program-card{transition:transform .25s ease,box-shadow .25s ease}
+.program-card:focus-within{outline:2px solid #c52c29;outline-offset:3px}
+.contact-form .form-header strong{font-family:var(--interactive);letter-spacing:-.7px}
+.contact-form .form-header span{font-family:var(--interactive)}
+.contact-form .form-submit{font-family:var(--interactive)}
+/* Contact -> location is a deliberate RED chapter break, not an accidental color jump. */
+.contact-section{padding-bottom:clamp(83px,9vw,132px)}
+.visit-section{
+  position:relative;
+  border-top:12px solid #cb302a;
+}
+.visit-section::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:0;
+  width:clamp(82px,14vw,210px);
+  height:12px;
+  background:#891c1c;
+  z-index:2
+}
+/* Calm, coherent hover and keyboard focus styles. */
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #ec5a4f;
+  outline-offset:4px
+}
+.contact-form input:focus-visible,.contact-form select:focus-visible,
+.contact-form textarea:focus-visible{outline-offset:2px}
+.gallery-item:focus-visible{outline:3px solid #ff756b;outline-offset:3px}
+@media(max-width:1100px){
+  .header{gap:15px;padding-inline:4%}
+  .header .brand-type b{font-size:27px}
+  .header .nav{gap:4px}
+  .header .nav a{font-size:12px;padding-inline:7px}
+  .header .header-cta{font-size:11px;gap:9px;padding-inline:12px}
+}
+@media(max-width:800px){
+  .header .brand-type b{font-size:27px}
+  .header .nav.open{gap:0;padding:17px 6% 25px}
+  .header .nav.open a{
+    font:750 18px/1.4 var(--interactive);
+    letter-spacing:0;
+    padding:13px 8px;
+    white-space:normal;
+    border-radius:0
+  }
+  .header .nav.open a::after{display:none}
+  .header .nav.open a:hover,.header .nav.open a:focus-visible{background:#ffffff11;color:#fff}
+  .visit-section{border-top-width:10px}
+  .visit-section::before{top:-10px;height:10px}
+}
+@media(max-width:520px){
+  .header .brand-type small{font-size:8px;letter-spacing:.35px}
+  .header .brand-type b{font-size:25px}
+  .header .nav.open a{font-size:17px}
+  .hero-logo-feature .hero-secondary{font-size:12px}
+  a.btn,button.btn{font-size:12px;min-height:52px;gap:17px}
+  .section-topline{font-size:10px;letter-spacing:.45px;gap:10px}
+  .programs .program-copy>div span{font-size:13px}
+  .gallery-footer{font-size:10px}
+  .gallery-footer>a{font-size:12px}
+  .visit-map>a{right:20px;bottom:23px;font-size:12px}
+  footer .footer-main nav a,footer .footer-extra a{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .header .nav a,.header .nav a::after,
+  footer .footer-main nav a,footer .footer-extra a,
+  .program-card{transition:none}
+}
