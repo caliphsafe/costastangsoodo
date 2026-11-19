@@ -9,22 +9,62 @@ const lightbox = $('#lightbox');
 document.querySelectorAll('.gallery-item').forEach(button => button.addEventListener('click', () => { $('#lightboxImage').src = button.dataset.image; $('#lightboxImage').alt = button.querySelector('img').alt; $('#lightboxCaption').textContent = button.dataset.caption; lightbox.showModal(); }));
 $('#closeLightbox').addEventListener('click', () => lightbox.close());
 lightbox.addEventListener('click', (e) => { if(e.target===lightbox) lightbox.close(); });
-const isMobile = () => /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (navigator.maxTouchPoints>1 && window.innerWidth<=850);
+const INQUIRY_URL = 'https://formsubmit.co/ajax/jcostakarate@gmail.com';
+const inquiryForm = $('#inquiryForm');
+const submitButton = inquiryForm.querySelector('button[type="submit"]');
 const submitText = $('#submitText');
-const explanation = $('#formExplanation');
-function updateSubmitLabel() { submitText.textContent=isMobile() ? 'PREPARE TEXT MESSAGE' : 'PREPARE EMAIL'; explanation.textContent=isMobile() ? 'Opens your texting app with a prepared inquiry. You must press Send yourself.' : 'Opens your email app with a prepared inquiry once the school email address is configured. You must press Send yourself.'; }
-updateSubmitLabel(); window.addEventListener('resize', updateSubmitLabel);
-let message='';
-$('#inquiryForm').addEventListener('submit', e => {
- e.preventDefault(); if(!e.currentTarget.reportValidity()) return;
- const val=id=>$('#'+id).value.trim();
- const days=[...document.querySelectorAll('.days input:checked')].map(i=>i.value).join(', ')||'Flexible / please advise';
- message=["Hello Costa's Tang Soo Do Karate,",'',"I would like to inquire about classes.",`Contact name: ${val('contactName')}`,`Student name: ${val('studentName')||'Same as contact'}`,`Age group: ${val('ageRange')}`,`Experience: ${val('experience')}`,`Program: ${val('program')}`,`Preferred days: ${days}`,val('notes')?`Additional information: ${val('notes')}`:'','Please let me know about current class times, availability, and next steps. Thank you!'].filter((x,i,a)=>x!==''||a[i-1]!=='').join('\n');
- const mobile=isMobile(); const email=(window.COSTAS_CONTACT_EMAIL||'').trim(); const number=window.COSTAS_SMS_NUMBER||'+15089798111';
- const url=mobile?`sms:${number}?body=${encodeURIComponent(message)}`:email?`mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent("New student inquiry - Costa's Karate")}&body=${encodeURIComponent(message)}`:null;
- $('#formFallback').hidden=false; $('#messagePreview').value=message;
- $('#formStatus').textContent=url ? `Your ${mobile?'text':'email'} is ready. Please review and press Send in your ${mobile?'messaging':'email'} app.` : 'The school email address has not been provided yet. Your inquiry is ready to copy, but desktop email sending is not configured.';
- $('#messageLink').hidden=!url; if(url) {$('#messageLink').href=url; $('#messageLink').textContent=mobile?'OPEN TEXT MESSAGE ↗':'OPEN EMAIL ↗'; window.location.href=url;}
- $('#formFallback').scrollIntoView({behavior:'smooth',block:'nearest'});
+const formStatus = $('#formStatus');
+let sending = false;
+
+inquiryForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (sending || !inquiryForm.reportValidity()) return;
+  const value = id => $('#' + id).value.trim();
+  const days = [...document.querySelectorAll('.days input:checked')]
+    .map(input => input.value).join(', ') || 'Flexible / please advise';
+  const name = value('contactName');
+  const email = value('contactEmail');
+  const phone = value('contactPhone');
+  const payload = {
+    name,
+    email,
+    phone: phone || 'Not provided',
+    student_name: value('studentName') || 'Same as contact',
+    age_group: value('ageRange'),
+    experience: value('experience'),
+    program: value('program'),
+    preferred_days: days,
+    additional_information: value('notes') || 'None provided',
+    _subject: "New Costa's Tang Soo Do inquiry - " + name,
+    _template: 'table',
+    _captcha: 'false',
+    _url: location.href,
+    _replyto: email
+  };
+  sending = true;
+  submitButton.disabled = true;
+  submitText.textContent = 'SENDING...';
+  formStatus.hidden = false;
+  formStatus.textContent = 'Submitting your inquiry...';
+
+  try {
+    const response = await fetch(INQUIRY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || String(result.success).toLowerCase() !== 'true') {
+      throw new Error(result.message || 'The inquiry service could not accept your request.');
+    }
+    formStatus.textContent = 'Your inquiry was submitted successfully. We’ll be in touch soon!';
+    inquiryForm.reset();
+    submitText.textContent = 'INQUIRY SENT';
+  } catch (error) {
+    formStatus.textContent = 'We could not submit your inquiry. Please try again or call (508) 979-8111. Your details have been kept.';
+    submitText.textContent = 'TRY SENDING AGAIN';
+  } finally {
+    sending = false;
+    submitButton.disabled = false;
+  }
 });
-$('#copyMessage').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(message); $('#formStatus').textContent='Message copied. Paste it into your email or text app to send.';}catch{ $('#messagePreview').focus();$('#messagePreview').select();$('#formStatus').textContent='Select and copy the message below.';}});
