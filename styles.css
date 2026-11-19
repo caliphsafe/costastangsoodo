@@ -712,3 +712,227 @@ footer{background:#0c1110;border-top:11px solid #050505}
     color:#454c46;
   }
 }
+
+
+/* 2026 FULL-SITE CONTRAST SYSTEM
+   Hero light -> values red -> philosophy dark -> programs light -> statement dark
+   -> master light -> gallery dark -> callout light -> contact dark -> visit light -> footer dark.
+   Every section overrides BOTH surfaces and readable foreground colors.
+*/
+:root{
+  --contrast-dark:#101a17;
+  --contrast-darker:#0b1311;
+  --contrast-light:#f4efe5;
+  --contrast-light-alt:#e8e1d5;
+  --contrast-red:#c52c29;
+  --contrast-light-text:#f8f3e9;
+  --contrast-dark-muted:#c5c9c0;
+  --contrast-ink:#19221e;
+}
+/* NAVIGATION — dark opposite the warm, light hero */
+.header{
+  background:var(--contrast-dark);
+  border-bottom:1px solid #ffffff30;
+  box-shadow:0 8px 25px #15171424;
+  color:var(--contrast-light-text);
+}
+.header::after{background:var(--contrast-red)}
+.brand-type b,.brand-type small{color:var(--contrast-light-text)}
+.header .nav a{color:#f4efe5}
+.header .nav a:hover,.header .nav a:focus-visible{color:#ff6860}
+.header .menu-button span{background:#f4efe5}
+.header .header-cta{color:#fff;background:#bc2825}
+.header .header-cta:hover{background:#e13b32}
+.header .brand-logo{filter:drop-shadow(0 2px 1px #0003)}
+/* Explicit mobile menu styling, including open state */
+@media(max-width:800px){
+ .header{background:var(--contrast-dark)}
+ .header .nav.open{
+   background:#17251f;
+   border-bottom:3px solid var(--contrast-red);
+   box-shadow:0 17px 30px #0007;
+ }
+ .header .nav.open a{color:#f8f2e7;border-bottom:1px solid #ffffff29}
+ .header .nav.open a:hover{color:#ff6b62}
+ .header .menu-button span{background:#f8f2e7}
+}
+/* HERO remains light: logo is foreground */
+.hero.hero-logo-feature{background:var(--contrast-light);color:var(--contrast-ink)}
+/* RED CREED between hero and section 01 */
+.value-rail{background:#ba2927;color:#fff;border-top:0;border-bottom:0}
+.value-rail span{color:#fff}
+.value-rail i{background:#fff}
+/* 01 PHILOSOPHY — dark surface with reversed type and structured cards */
+.intro{
+  background:radial-gradient(circle at 96% 15%,#26372e 0,transparent 42%),var(--contrast-dark);
+  color:var(--contrast-light-text);
+}
+.intro .section-topline{color:#f4eee4;border-bottom-color:#ffffff4a}
+.intro .section-topline span:first-child,.intro .tiny-red{color:#f46a5d}
+.intro .section-topline::before{background:#e6483e}
+.intro .intro-title h2{color:#f8f3e9}
+.intro .intro-title h2 em{color:#f4655a}
+.intro .intro-title h2::after{background:#f4655a}
+.intro .intro-big{color:#f3eee3}
+.intro .intro-detail>p:not(.intro-big){color:#d1d6cc}
+.intro .three-principles{border-color:#ffffff3d}
+.intro .three-principles div{
+  background:#1b2923;
+  color:#f3f1e9;
+  border-color:#58705f;
+  box-shadow:inset 0 4px 0 #e9d4b2;
+}
+.intro .three-principles div:nth-child(2){
+  background:#26372e;
+  box-shadow:inset 0 4px 0 #f05a4e;
+}
+.intro .three-principles div:hover{background:#304337}
+.intro .three-principles b{background:#e5d4b5;color:#111b16}
+.intro .three-principles div:nth-child(2) b{background:#db3930;color:#fff}
+.intro .three-principles strong{color:#f8f3e9}
+.intro .three-principles small{color:#cbd0c6}
+.intro .inline-link{color:#f6f1e7;border-bottom-color:#f6f1e7}
+.intro .inline-link:hover{color:#ff756b;border-bottom-color:#ff756b}
+.intro .motif-about{color:#ffffff0c}
+.intro .intro-detail::before{color:#a7ada4}
+/* 02 PROGRAMS — bright cream and ink, with warm-white academy cards */
+.programs{
+  background:var(--contrast-light);
+  color:var(--contrast-ink);
+}
+.programs::before{
+  background:repeating-linear-gradient(135deg,transparent 0 33px,#161e1708 34px 35px,transparent 36px 67px);
+  opacity:.5;
+}
+.programs .section-topline{color:#303a34;border-bottom-color:#aea599}
+.programs .section-topline span:first-child{color:#b42b27}
+.programs .section-topline::before{background:#c52c29}
+.programs .program-heading h2{color:#16211d}
+.programs .program-heading h2 em{color:#c32e2a}
+.programs .program-heading>p{color:#555e57;border-left-color:#c52c29}
+.programs .section-side-label{color:#7b7f75}
+.programs .program-card{
+  background:#fffdf8;
+  color:#1a231e;
+  border:1px solid #cec7ba;
+  box-shadow:7px 8px 0 #d6cfc3;
+}
+.programs .program-card:hover{box-shadow:7px 14px 0 #cdc3b7}
+.programs .program-card:nth-child(2)::before{background:#ab8a63}
+.programs .program-card:nth-child(3)::before{background:#1f332b}
+.programs .program-copy>p{color:#ae2a26}
+.programs .program-copy h3{color:#17201c}
+.programs .program-copy>div{border-top-color:#9eab9f}
+.programs .program-copy>div span{color:#4b534f}
+.programs .program-copy button{color:#fff;background:#b62926}
+.programs .program-note{color:#525a53;border-top-color:#b7afa5}
+/* Editorial statement: black/oxblood bridge between sections */
+.statement{background:#111b17;color:#f7f2e8}
+.statement-content{background:#9c2425;color:#fff9ef}
+.statement-content>span{color:#f7e6e1}
+.statement-content p{color:#fff9ef}
+.statement-content p em{color:#161f1b}
+.statement-content a{color:#fff9ef;border-color:#fff9ef}
+/* 03 MASTER — warm ivory/light content as intentional relief after statement */
+.master-section{background:var(--contrast-light-alt);color:var(--contrast-ink)}
+.master-section .section-topline{color:#252b27;border-bottom-color:#a9a195}
+.master-section .section-topline span:first-child{color:#b82825}
+.master-section .master-copy h2{color:#17201c}
+.master-section .master-copy h2 em{color:#bf2c29}
+.master-section .master-copy>p:not(.tiny-red){color:#4e554f}
+.master-section .master-copy .master-profile-label{color:#a42b25!important}
+.master-section .master-rule{color:#29332c;border-top-color:#bc2e29}
+.master-section .master-rule span:first-child{color:#b72825}
+.master-section .master-copy .btn-dark{background:#18221c;color:#fff}
+.master-section .master-copy .btn-dark:hover{background:#bd2e2a}
+/* 04 GALLERY — dark documentary surface, light headlines/metadata */
+.gallery-section{
+  background:radial-gradient(ellipse at 10% 0%,#29372f 0,transparent 46%),#101a17;
+  color:#f7f2e8;
+}
+.gallery-section .section-topline{color:#e8ebe3;border-bottom-color:#ffffff45}
+.gallery-section .section-topline span:first-child{color:#fa6b5c}
+.gallery-section .section-topline::before{background:#ea5146}
+.gallery-section .gallery-edition{color:#c9ccbf}
+.gallery-section .gallery-heading h2{color:#f7f2e8}
+.gallery-section .gallery-heading h2 em{color:#fa6c5f}
+.gallery-section .gallery-heading p{color:#c6cec4}
+.gallery-section .gallery-item{background:#29312c}
+.gallery-section .gallery-item::before{border-color:#ffffff32}
+.gallery-section .gallery-footer{color:#e4e8df;border-top-color:#ffffff65}
+.gallery-section .gallery-footer a{color:#fff4e6}
+.gallery-section .gallery-footer a:hover{color:#ff7468}
+/* 05 CALLOUT — warm light to break from gallery, with dark copy */
+.callout{background:#eee7db;color:#15201a}
+.callout-inner{
+  background:radial-gradient(circle at 97% 4%,#d9c8b6a3 0%,transparent 42%),#eee7db;
+  color:#17211b;
+}
+.callout-inner>span{color:#585f56}
+.callout h2{color:#17221c}
+.callout h2 em{color:#c02c29}
+.callout p{color:#4c574e}
+.callout-inner::before{border-color:#c22b271b}
+.callout .btn-red{color:#fff}
+/* 06 CONTACT — dark outer background with clearly contrasted ivory form */
+.contact-section{
+  background:#15221d;
+  color:#f8f2e7;
+}
+.contact-section .section-topline{color:#f6f2e7;border-bottom-color:#ffffff42}
+.contact-section .section-topline span:first-child{color:#fa6c5f}
+.contact-section .section-topline::before{background:#f16658}
+.contact-section .contact-info h2{color:#f8f2e7}
+.contact-section .contact-info h2 em{color:#f4685b}
+.contact-section .contact-info .tiny-red{color:#f36a60}
+.contact-section .contact-info>p:not(.tiny-red){color:#d4dacd}
+.contact-section .contact-sidenote{border-top-color:#ffffff4b}
+.contact-section .contact-sidenote b{color:#f8f2e7}
+.contact-section .contact-sidenote span{color:#bfcac0}
+.contact-section .contact-ring{border-color:#e94a3a1c}
+.contact-section .contact-form{
+  background:#f8f4eb;
+  color:#19211c;
+  border-color:#090e0c;
+  border-top-color:#d13930;
+  box-shadow:11px 11px 0 #0a0e0b88;
+}
+.contact-section .contact-form .form-header{border-color:#29332b}
+.contact-section .contact-form .form-header strong{color:#19211c}
+.contact-section .contact-form .form-header span{color:#a92722}
+.contact-section .contact-form label,.contact-section .contact-form .days legend{color:#19211c!important}
+.contact-section .contact-form .form-small{color:#565c55}
+.contact-section .contact-form input:not([type=checkbox]),
+.contact-section .contact-form select,
+.contact-section .contact-form textarea{background:#fffefa;color:#19211c}
+.contact-section .days label span{background:#fffefa;color:#222e26;border-color:#b7aea2}
+.contact-section .days input:checked+span{background:#bd2926;color:#fff;border-color:#bd2926}
+/* VISIT — light local info, contrast dark map block */
+.visit-section{background:#e7e0d4}
+.visit-copy{background:#e7e0d4;color:#17211b}
+.visit-copy::before{border-color:#a928271c}
+.visit-copy>span{color:#7b3b35}
+.visit-copy h2{color:#17211b}
+.visit-copy h2 em{color:#c12d2a}
+.visit-copy p{color:#344039}
+.visit-copy a{color:#17211b;border-bottom-color:#17211b}
+.visit-map{background:#14201a;color:#f7f2e8}
+.visit-map .map-pin>span{color:#ef5449}
+.visit-map>a{background:#c42d2b;color:#fff}
+footer{background:#0c1512;color:#f7f2e8}
+footer .footer-main{border-bottom-color:#ffffff3a}
+footer .footer-bottom{color:#c4c9c0}
+footer .footer-main p{color:#c5cac0}
+@media(max-width:800px){
+  .header .nav.open{background:#17251f}
+  .programs{background:var(--contrast-light)}
+  .intro{background:#101a17}
+  .gallery-section{background:#101a17}
+  .callout-inner{background:#eee7db}
+}
+@media(max-width:520px){
+  .header .nav.open a{color:#fff6e9}
+  .intro .three-principles div+div{border-color:#58705f}
+  .programs .program-card{box-shadow:4px 5px 0 #d6cfc3}
+  .contact-section .contact-form{box-shadow:6px 6px 0 #090e0c75}
+}
