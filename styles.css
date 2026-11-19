@@ -606,3 +606,109 @@ footer{background:#0c1110;border-top:11px solid #050505}
   .hero-logo-feature .hero-nameplate{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){.hero-logo-feature .hero-brand-mark{transition:none}}
+
+
+/* HERO 05 — warm paper background, ink typography, no central divider */
+.hero.hero-logo-feature{
+  background:#f4efe5;
+  color:#171e1b;
+}
+.hero.hero-logo-feature::after{
+  background:none;
+  border:0;
+}
+.hero.hero-logo-feature::before{
+  background:#c92928;
+  width:7px;
+}
+.hero-logo-feature .hero-copy,
+.hero-logo-feature .hero-nameplate,
+.hero-logo-feature .eyebrow,
+.hero-logo-feature h1{
+  color:#171e1b;
+}
+.hero-logo-feature .eyebrow,
+.hero-logo-feature .hero .eyebrow{
+  color:#343a35;
+}
+.hero-logo-feature .hero-nameplate{
+  color:#5d6158;
+}
+.hero-logo-feature h1{
+  color:#171e1b;
+  text-shadow:none;
+}
+.hero-logo-feature h1 em{
+  color:#c92928;
+  text-shadow:none;
+}
+.hero-logo-feature .hero-copy>p{
+  color:#454c46;
+}
+.hero-logo-feature .hero-secondary{
+  color:#171e1b;
+  border-bottom:1px solid #424b45;
+}
+.hero-logo-feature .hero-secondary:hover{
+  color:#b92324;
+  border-color:#b92324;
+}
+.hero-logo-feature .hero-brand-stage{
+  background:transparent;
+}
+.hero-logo-feature .hero-brand-halo{
+  background:radial-gradient(circle,#e9dfd3aa 0 46%,transparent 46.3% 54%,#b6a99d55 54.4% 54.7%,transparent 55% 66%,#b6a99d33 66.2% 66.5%,transparent 67%);
+}
+.hero-logo-feature .hero-brand-stage::before{
+  border-color:#9a8a7b33;
+}
+.hero-logo-feature .hero-brand-mark{
+  filter:drop-shadow(0 14px 20px #352d2721);
+}
+.hero-logo-feature .hero-brand-stage::after{
+  background:#d03a31;
+}
+.hero-logo-feature .hero-brand-caption{
+  border-top:0;
+  padding-top:8px;
+}
+.hero-logo-feature .hero-brand-caption span{
+  color:#ad2323;
+}
+.hero-logo-feature .hero-brand-caption strong{
+  color:#28312b;
+}
+.hero-logo-feature .hero-brand-caption b{
+  color:#c92928;
+}
+.hero-logo-feature .hero-brand-watermark{
+  color:#a88f7c11;
+}
+.hero-logo-feature .hero-corner{
+  color:#4f5850;
+  border-color:#989d9566;
+}
+/* Crisp separation between the light hero, deep-red creed, and cream philosophy. */
+.value-rail{
+  border-top:0;
+  background:#b92725;
+}
+.intro{
+  background:#eee9de;
+}
+.intro .section-topline{
+  border-bottom-color:#b6aa9b;
+}
+@media(max-width:800px){
+  .hero.hero-logo-feature{
+    background:#f4efe5;
+  }
+}
+@media(max-width:520px){
+  .hero.hero-logo-feature{
+    background:#f4efe5;
+  }
+  .hero-logo-feature .hero-copy>p{
+    color:#454c46;
+  }
+}
