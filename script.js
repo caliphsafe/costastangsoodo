@@ -103,3 +103,33 @@ inquiryForm.addEventListener('submit', async event => {
     observer.observe(item);
   });
 })();
+
+
+// Keep the decorative hero video muted and looping whenever the browser allows playback.
+(() => {
+  const video = document.getElementById('heroBackgroundVideo');
+  if (!video) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.autoplay = true;
+
+  const resumeVideo = () => {
+    if (!video.isConnected || document.hidden) return;
+    if (video.ended && Number.isFinite(video.duration)) video.currentTime = 0;
+    if (!video.paused) return;
+    const attempt = video.play();
+    if (attempt && typeof attempt.catch === 'function') {
+      attempt.catch(() => {
+        // Autoplay may be restricted by browser or device power-saving policies.
+      });
+    }
+  };
+  video.addEventListener('canplay', resumeVideo);
+  video.addEventListener('pause', resumeVideo);
+  video.addEventListener('ended', () => { video.currentTime = 0; resumeVideo(); });
+  document.addEventListener('visibilitychange', resumeVideo);
+  window.addEventListener('pageshow', resumeVideo);
+  resumeVideo();
+})();
