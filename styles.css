@@ -287,3 +287,82 @@ footer{background:#0c1110;border-top:11px solid #050505}
 @media(prefers-reduced-motion:reduce){
 .program-card,.program-copy button,.three-principles div,.visit-copy a,.visit-map>a{transition:none}
 }
+
+
+/* 2026 hero brand lockup & readable inquiry typography */
+.hero{min-height:900px;display:flex;align-items:center}
+.hero-content{max-width:940px;padding-top:68px;padding-bottom:100px}
+.hero-photo img{object-position:center 42%;filter:saturate(.94) contrast(1.07);image-rendering:auto}
+.hero-shade{background:linear-gradient(90deg,#0a1112f7 0%,#0a1112e6 31%,#0a111293 57%,#0a11124a 100%),linear-gradient(0deg,#0b1212aa,transparent 43%)}
+.hero-brand-lockup{display:flex;align-items:center;gap:22px;margin:0 0 34px;padding:0 0 21px;border-bottom:1px solid #f7efe34d;max-width:570px}
+.hero-brand-crest{flex:0 0 auto;width:128px;height:128px;padding:10px;border:2px solid #f1e7d2a8;background:#eae5dff0;display:grid;place-items:center;box-shadow:0 0 0 7px #ffffff12,7px 9px 0 #0004}
+.hero-brand-crest img{width:100%;height:100%;object-fit:contain}
+.hero-brand-copy{display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.hero-brand-kicker,.hero-brand-location{font:700 12px/1.4 var(--body);letter-spacing:2.2px;color:#e2dbca}
+.hero-brand-copy strong{font:900 clamp(50px,5.8vw,87px)/.88 var(--head);letter-spacing:.3px;color:#fff}
+.hero-brand-subtitle{font:800 clamp(15px,1.7vw,24px)/1.15 var(--body);letter-spacing:1px;color:#f2eee5}
+.hero-brand-subtitle b{color:#f33e31}
+.hero-brand-location{margin-top:4px;font-size:10px}
+.hero .eyebrow{font-size:12px;letter-spacing:1.6px;color:#e8e3d9}
+.hero h1{font-size:clamp(77px,8.3vw,130px);margin:25px 0 20px;line-height:.83}
+.hero h1::after{display:none}
+.hero p{font-size:16px;max-width:440px;margin-top:16px}
+.hero-links{margin-top:25px}
+.hero-stamp{right:5%;bottom:135px}
+.hero-kanji{opacity:.34}
+.contact-form{font-family:var(--body)}
+.contact-form .form-header strong{font:800 clamp(22px,2.5vw,33px)/1.12 var(--body);letter-spacing:-.7px;text-transform:none;color:#141b19}
+.contact-form .form-header span{font:800 11px/1.4 var(--body);letter-spacing:1px}
+.contact-form::before{font:800 10px/1.5 var(--body);letter-spacing:1.5px}
+.contact-form label,.days legend{font:700 13px/1.45 var(--body)!important;letter-spacing:.1px!important;color:#19201e}
+.contact-form label b{font-weight:800}
+.contact-form input:not([type=checkbox]),.contact-form select,.contact-form textarea{font:500 15px/1.5 var(--body);letter-spacing:normal;color:#1a211f;min-height:52px}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#77736d;opacity:1}
+.contact-form select{padding-right:30px}
+.days label span{font:700 13px/1.4 var(--body);letter-spacing:.3px}
+.contact-form .form-small{font:400 12px/1.65 var(--body)}
+.contact-form .form-submit{font:800 16px/1.4 var(--body);letter-spacing:.25px}
+@media(max-width:1100px){
+.hero{min-height:840px}
+.hero-content{max-width:800px}
+.hero-brand-crest{width:108px;height:108px}
+.hero-brand-copy strong{font-size:clamp(47px,6vw,72px)}
+.hero h1{font-size:clamp(76px,9.1vw,112px)}
+}
+@media(max-width:800px){
+.hero{min-height:820px}
+.hero-content{padding:62px 6% 120px}
+.hero-brand-lockup{gap:16px;max-width:520px}
+.hero-brand-crest{width:100px;height:100px}
+.hero-stamp{right:4%;bottom:69px}
+.hero h1{font-size:clamp(76px,11.2vw,106px)}
+}
+@media(max-width:520px){
+.hero{min-height:815px}
+.hero-photo img{object-position:57% center}
+.hero-shade{background:linear-gradient(90deg,#0a1112f0 0%,#0a1112b9 75%,#0a111299),linear-gradient(0deg,#0b1212a8,transparent 65%)}
+.hero-content{padding:76px 5% 105px}
+.hero-brand-lockup{gap:12px;margin-bottom:28px;padding-bottom:16px;max-width:100%}
+.hero-brand-crest{width:78px;height:78px;padding:7px;box-shadow:0 0 0 3px #ffffff12}
+.hero-brand-kicker{font-size:9px;letter-spacing:1.3px}
+.hero-brand-copy strong{font-size:clamp(41px,11vw,60px);line-height:.87}
+.hero-brand-subtitle{font-size:clamp(11px,3.25vw,15px);letter-spacing:.1px}
+.hero-brand-location{font-size:8px;letter-spacing:.6px}
+.hero .eyebrow{font-size:11px;letter-spacing:1.2px}
+.hero h1{font-size:clamp(64px,14vw,83px);margin:26px 0 17px}
+.hero p{font-size:14px;line-height:1.65;margin-top:12px;max-width:330px}
+.hero-links{margin-top:22px}
+.hero-stamp{width:70px;height:70px;right:6%;bottom:56px}
+.hero-stamp strong{font-size:18px}
+.hero-stamp span{font-size:6px}
+.hero-corner{bottom:16px}
+.contact-form .form-header{flex-wrap:wrap}
+.contact-form .form-header strong{font-size:23px}
+.contact-form .form-header span{font-size:10px}
+}
+@media(max-width:375px){
+.hero-brand-crest{width:67px;height:67px}
+.hero-brand-copy strong{font-size:38px}
+.hero-brand-subtitle{font-size:10px}
+.hero h1{font-size:61px}
+}
