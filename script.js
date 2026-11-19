@@ -1,8 +1,27 @@
 const $ = (selector) => document.querySelector(selector);
 const nav = $('#navigation');
 const menuButton = $('.menu-button');
-menuButton.addEventListener('click', () => { const open = nav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(open)); });
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menuButton.setAttribute('aria-expanded','false'); }));
+const menuLabel = menuButton.querySelector('.menu-label');
+const setMenuOpen = open => {
+  nav.classList.toggle('open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  if (menuLabel) menuLabel.textContent = open ? 'CLOSE' : 'MENU';
+};
+menuButton.addEventListener('click', () => setMenuOpen(!nav.classList.contains('open')));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuOpen(false)));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('open')) {
+    setMenuOpen(false);
+    menuButton.focus();
+  }
+});
+document.addEventListener('pointerdown', event => {
+  if (nav.classList.contains('open') && !event.target.closest('.header')) setMenuOpen(false);
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 800 && nav.classList.contains('open')) setMenuOpen(false);
+}, { passive: true });
 $('#year').textContent = new Date().getFullYear();
 document.querySelectorAll('[data-program]').forEach(button => button.addEventListener('click', () => { $('#program').value = button.dataset.program; $('#contact').scrollIntoView({behavior:'smooth'}); }));
 const lightbox = $('#lightbox');
